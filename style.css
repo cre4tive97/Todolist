@@ -101,3 +101,12 @@ main {
   border: none;
   font-size: 1rem;
 }
+
+.quote {
+  font-size: 1rem;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  font-size: 1rem;
+}
