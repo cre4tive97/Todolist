@@ -20,8 +20,7 @@ main {
 }
 
 .todos--header {
-  margin-top: 5rem;
-  margin-bottom: 2rem;
+  margin-top: 3rem;
 }
 
 .todos--header h1 {
@@ -80,4 +79,25 @@ main {
   width: 35rem;
   height: 3rem;
   outline: none;
+}
+
+.created {
+  list-style: none;
+  width: 300px;
+}
+
+.created li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.created li span {
+  font-size: 1rem;
+}
+
+.created li button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
 }

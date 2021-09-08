@@ -37,16 +37,18 @@ const created = document.querySelector(".created");
 let todos = [];
 
 function createTodos(newTodos) {
-  const createdList = document.createElement("li");
-  const createdSpan = document.createElement("span");
-  createdSpan.innerText = newTodos;
-  const createdBtn = document.createElement("button");
+  let createdList = document.createElement("li");
+  createdList.id = newTodos.id;
+  let createdSpan = document.createElement("span");
+  createdSpan.innerText = newTodos.text;
+  let createdBtn = document.createElement("button");
   createdBtn.innerText = "❌";
   createdBtn.addEventListener("click", (e) => {
-    const clickLi = e.target.parentElement;
-    clickLi.remove();
+    const li = e.target.parentElement;
+    li.remove();
+    todos = todos.filter((todo) => todo.id !== parseInt(li.id));
+    localStorage.setItem("todos", JSON.stringify(todos));
   });
-
   createdList.append(createdSpan);
   createdList.append(createdBtn);
   created.append(createdList);
@@ -55,6 +57,18 @@ function createTodos(newTodos) {
 todosSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   const newTodos = todosInput.value;
-  createTodos(newTodos);
-  todosInput.value = "";
+  const newTodosObj = { text: newTodos, id: Date.now() };
+  if (newTodos !== "") {
+    todosInput.value = "";
+    todos.push(newTodosObj);
+    createTodos(newTodosObj);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }
 });
+
+const savedTodos = localStorage.getItem("todos");
+if (savedTodos !== null) {
+  const parsedTodos = JSON.parse(savedTodos);
+  todos = parsedTodos;
+  parsedTodos.forEach(createTodos);
+}
