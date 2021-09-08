@@ -1,0 +1,28 @@
+body {
+  font-family: "Roboto";
+  color: var(--main-color);
+  margin: 0;
+  height: 100vh;
+  text-shadow: 0 0 2rem rgb(180, 180, 180);
+}
+
+main {
+  background-image: url("https://blog.kakaocdn.net/dn/bdhPTh/btqDRw7sj4R/rp5H5nJVL9gM5Ufxyvu0n1/img.jpg");
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todos--header {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.todos--header h1 {
+  font-size: 2.5rem;
+}
+
+.date__num {
+}
