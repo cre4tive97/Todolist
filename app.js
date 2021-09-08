@@ -42,6 +42,11 @@ function createTodos(newTodos) {
   createdSpan.innerText = newTodos;
   const createdBtn = document.createElement("button");
   createdBtn.innerText = "❌";
+  createdBtn.addEventListener("click", (e) => {
+    const clickLi = e.target.parentElement;
+    clickLi.remove();
+  });
+
   createdList.append(createdSpan);
   createdList.append(createdBtn);
   created.append(createdList);
