@@ -1,5 +1,9 @@
 # todolist
 
-todolist with vanilla JS
+## _making todolist with vanilla JS_
 
     Practice ES6
+        - destructuring
+        - arrow function
+
+_spent time : 4 hours_
