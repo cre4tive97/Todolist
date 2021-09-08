@@ -27,3 +27,11 @@ function init() {
 }
 
 init();
+
+const todosInput = document.querySelector(".todos__input");
+const todosSubmit = document.querySelector(".todos__submit");
+
+todosSubmit.addEventListener("click", function (e) {
+  e.preventDefault();
+  todosInput.value = "";
+});
