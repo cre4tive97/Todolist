@@ -1,3 +1,4 @@
+// Watch
 function watch() {
   const date = new Date();
   const dateName = ["months", "days", "hours", "minutes", "seconds"];
@@ -28,10 +29,27 @@ function init() {
 
 init();
 
+// Todo List
+
 const todosInput = document.querySelector(".todos__input");
 const todosSubmit = document.querySelector(".todos__submit");
+const created = document.querySelector(".created");
+let todos = [];
+
+function createTodos(newTodos) {
+  const createdList = document.createElement("li");
+  const createdSpan = document.createElement("span");
+  createdSpan.innerText = newTodos;
+  const createdBtn = document.createElement("button");
+  createdBtn.innerText = "❌";
+  createdList.append(createdSpan);
+  createdList.append(createdBtn);
+  created.append(createdList);
+}
 
 todosSubmit.addEventListener("click", function (e) {
   e.preventDefault();
+  const newTodos = todosInput.value;
+  createTodos(newTodos);
   todosInput.value = "";
 });
