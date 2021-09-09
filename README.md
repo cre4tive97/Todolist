@@ -6,4 +6,4 @@
         - destructuring
         - arrow function
 
-_spent time : 4 hours_
+
